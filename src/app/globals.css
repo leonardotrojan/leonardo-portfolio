@@ -6,6 +6,9 @@
 
   --card: 245 245 245;
   --border: 228 228 231;
+
+  --card-gradient-start: 245 245 245;
+  --card-gradient-end: 230 230 230;
 }
 
 .dark {
@@ -14,6 +17,9 @@
 
   --card: 24 24 27;
   --border: 28 28 30;
+
+  --card-gradient-start: 24 24 27;
+  --card-gradient-end: 5 5 6;
 }
 
 @theme {
@@ -23,6 +29,16 @@
   --color-border: rgb(var(--border));
 }
 
+html {
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
 }
