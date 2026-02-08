@@ -21,8 +21,7 @@ const ProjectCard = ({project}: ProjectCardProps) => {
     return ( 
         <div>
         <Card className="group relative mx-auto w-full max-w-sm pt-0
-                        bg-gradient-to-br from-[rgb(var(--card-gradient-start)/1)]
-                        to-[rgb(var(--card-gradient-end)/1)]
+                        bg-gradient-to-br from-[rgb(var(--card-gradient-start)/1)] to-[rgb(var(--card-gradient-end)/1)]
                         transition-all duration-300 ease-out hover:scale-[1.04] border border-zinc-300 dark:border-zinc-700">
         <div className="absolute inset-0 z-30 aspect-video" />
         <img

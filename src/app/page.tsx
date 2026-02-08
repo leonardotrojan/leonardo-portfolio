@@ -1,3 +1,4 @@
+import ContactSection from "./components/contact-section";
 import HabilitiesSection from "./components/habilities-section";
 import HeroSection from "./components/hero-section";
 import NavBar from "./components/navbar/nav-bar";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <HabilitiesSection />
       <ProjectsSection />
+      <ContactSection />
     </div>
   );
 }
