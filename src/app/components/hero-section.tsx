@@ -40,7 +40,7 @@ const HeroSection = () => {
                      e transformar ideias em soluções funcionais. Atualmente, meu foco é crescer profissionalmente como desenvolvedor, 
                      contribuindo com projetos reais e aprendendo todos os dias.</p>
                     <a href="/curriculo-leonardoTrojan.pdf" download>
-                      <Button className="flex gap-2 mt-3 bg-purple-600 text-foreground">
+                      <Button className="flex gap-2 mt-3 bg-purple-600 text-foreground cursor-pointer">
                         <Download size={18} />
                         Baixar currículo
                       </Button>

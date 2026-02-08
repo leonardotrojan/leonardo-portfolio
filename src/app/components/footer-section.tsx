@@ -3,7 +3,11 @@ import Image from "next/image";
 
 const Footer = () => {
     return ( 
-        <div className="w-full h-[10em] bg-card flex justify-center items-center gap-8">
+        <div className="w-full h-[10em] bg-card flex justify-center items-center gap-8
+                        bg-gradient-to-br 
+                        from-[rgb(var(--card-gradient-start))] 
+                        to-[rgb(var(--card-gradient-end))] transition-colors
+                        duration-300">
             <div className="rounded-full p-3 bg-background hover:scale-110 hover:bg-foreground/10 transition cursor-pointer">
                 <Instagram height={40} width={40} />
             </div>
