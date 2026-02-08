@@ -16,7 +16,7 @@ const NavBar = () => {
                         <a href="#projects">projetos</a>
                     </li>
                     <li className="hover:border-b-2 border-purple-400 hover:-translate-y-1 transition delay-100 duration-200">
-                        <a href="#">contato</a>
+                        <a href="#contact">contato</a>
                     </li>
                 </ul>
             </div>
