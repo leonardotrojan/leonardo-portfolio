@@ -50,9 +50,6 @@ Também é possível baixar meu **currículo em PDF** diretamente do portfólio.
 
 ---
 
-## 🚀 Como rodar localmente
-
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/leonardotrojan/portifolio.git
+## 🚀 link do deploy:
+```
+https://leonardo-portfolio-iota.vercel.app/
