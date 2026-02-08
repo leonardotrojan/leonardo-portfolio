@@ -3,6 +3,8 @@
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image"
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const HeroSection = () => {
 
@@ -16,7 +18,7 @@ const HeroSection = () => {
         <div id="about" className="w-full min-h-screen flex items-center 
                                 justify-center p-10 md:p-5 gap-0 md:gap-15 flex-col 
                                 md:flex-row scroll-mt-24 pt-30 md:pt-5">
-            <div className="flex-1 p-4 ml-0 md:ml-10">
+            <div className="flex-1 p-4 ml-0 md:ml-10 flex flex-col items-center">
                 <h1 className="text-2xl text-center md:text-left">Olá! Eu sou Leonardo</h1>
                 <div className="text-2xl text-purple-600 text-center md:text-left">
                     <Typewriter
@@ -37,9 +39,15 @@ const HeroSection = () => {
                     Gosto de entender o “porquê” por trás das decisões técnicas e estou em constante evolução, buscando aprender na prática
                      e transformar ideias em soluções funcionais. Atualmente, meu foco é crescer profissionalmente como desenvolvedor, 
                      contribuindo com projetos reais e aprendendo todos os dias.</p>
+                    <a href="/curriculo-leonardoTrojan.pdf" download>
+                      <Button className="flex gap-2 mt-3 bg-purple-600 text-foreground">
+                        <Download size={18} />
+                        Baixar currículo
+                      </Button>
+                    </a>
             </div>
             <div className="flex-1 flex justify-center">
-                <div className="w-70 h-70 mr-10">
+                <div className="w-70 h-70 m-10">
                     <Image
                       src="/leo-picture.jpeg"
                       alt="Foto-leonardo"
