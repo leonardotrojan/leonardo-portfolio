@@ -20,7 +20,7 @@ const HeroSection = () => {
                                 md:flex-row scroll-mt-24 pt-30 md:pt-5">
             <div className="flex-1 p-4 ml-0 md:ml-10 flex flex-col items-center">
                 <h1 className="text-2xl text-center md:text-left">Olá! Eu sou Leonardo</h1>
-                <div className="text-2xl text-purple-600 text-center md:text-left">
+                <div className="h-[2.6rem] text-2xl text-purple-600 text-center md:text-left">
                     <Typewriter
                       words={['< Desenvolvedor Full-Stack />']}
                       loop={0}
@@ -30,7 +30,7 @@ const HeroSection = () => {
                       delaySpeed={30}
                     />
                 </div>
-                <p className="text-justify pt-10 md:pt-3">Sou desenvolvedor full-stack com foco em construir aplicações modernas, 
+                <p className="hidden md:block text-justify pt-10 md:pt-3">Sou desenvolvedor full-stack com foco em construir aplicações modernas, 
                     bem estruturadas e próximas de cenários reais de produção. Trabalho principalmente com JavaScript e TypeScript, 
                     atuando tanto no front-end quanto no back-end, sempre buscando clareza de arquitetura, código limpo e boas 
                     práticas.
@@ -39,6 +39,11 @@ const HeroSection = () => {
                     Gosto de entender o “porquê” por trás das decisões técnicas e estou em constante evolução, buscando aprender na prática
                      e transformar ideias em soluções funcionais. Atualmente, meu foco é crescer profissionalmente como desenvolvedor, 
                      contribuindo com projetos reais e aprendendo todos os dias.</p>
+                     <p className="block md:hidden text-justify pt-10 md:pt-3">
+                        Sou desenvolvedor full-stack com foco em criar aplicações modernas e bem estruturadas, atuando com JavaScript 
+                        e TypeScript tanto no front-end quanto no back-end. Trabalho com React, Next.js, Tailwind CSS, Node.js e NestJS, 
+                        buscando sempre código limpo, boas práticas e aprendizado constante por meio de projetos reais.
+                     </p>
                     <a href="/curriculo-leonardoTrojan.pdf" download>
                       <Button className="flex gap-2 mt-3 bg-purple-600 text-foreground cursor-pointer">
                         <Download size={18} />
