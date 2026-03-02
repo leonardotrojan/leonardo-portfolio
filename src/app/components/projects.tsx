@@ -6,6 +6,7 @@ const ProjectsSection = () => {
             <h1 className="font-bold text-3xl text-center mb-10">Meus <span className="text-green-600">projetos</span></h1>
             <div className="flex justify-center">
                 <div className="px-5 grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+                    <ProjectCard project="goalFlow" />
                     <ProjectCard project="cafeteria"/>
                     <ProjectCard project="orderService" />
                     <ProjectCard project="selfCheckout" />

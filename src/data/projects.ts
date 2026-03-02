@@ -1,4 +1,17 @@
 export const projects = {
+    goalFlow: {
+        name: 'Gerenciador de metas',
+        description: 'Backend arquitetado com NestJS aplicando princípios de separação de responsabilidades, autenticação JWT e persistência com Prisma/PostgreSQL.',
+        stack: {
+            node: '/icons/node.webp',
+            typescript: '/icons/typescript.png',
+            postgres: '/icons/postgres.png'
+        },
+        url: '/project_pics/goalFlow.png',
+        liveUrl: '',
+        repoUrl: 'https://github.com/leonardotrojan/goalFlow',
+        projectDetails: 'Backend REST API para gerenciamento inteligente de metas pessoais, construída com NestJS, Prisma e PostgreSQL. Estruturada com arquitetura baseada em use-cases e repositórios, autenticação JWT e pronta para integração com geração de roadmap via IA.'
+    },
     cafeteria: {
         name: 'Cafeteria responsiva',
         description: 'Projeto com foco em fundamentos, manipulação e estado de DOM ',
@@ -16,7 +29,8 @@ export const projects = {
         name: 'Order Service API',
         description: 'API de gerenciamento com regras de negócio, autenticação e banco de dados',
         stack: {
-            node: '/icons/node.webp'
+            node: '/icons/node.webp',
+            postgres: '/icons/postgres.png'
         },
         url: '/project_pics/orderService.png',
         liveUrl: null,
