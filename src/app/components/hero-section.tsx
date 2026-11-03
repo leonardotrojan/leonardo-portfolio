@@ -1,69 +1,97 @@
-"use client"
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { resumeUrl, social } from "@/data/social";
+import FieldCanvas from "./hero/field-canvas";
+import { cta } from "./shared/cta";
+import Magnetic from "./shared/magnetic";
+import Words from "./shared/words";
 
-import { Typewriter } from "react-simple-typewriter";
-import Image from "next/image"
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+const stack = ['TypeScript', 'React', 'Next.js', 'Node.js', 'NestJS', 'PostgreSQL']
+
+const delay = (ms: number) => ({ "--delay": `${ms}ms` } as React.CSSProperties)
 
 const HeroSection = () => {
+    return (
+        <section
+         id="top"
+         aria-label="Apresentação"
+         className="relative flex min-h-[100svh] flex-col pt-16"
+        >
+            <div className="container-page relative flex flex-1 flex-col">
+                <FieldCanvas
+                 className="enter pointer-events-none absolute top-0 bottom-[40%] right-4 left-1/4 md:bottom-0 md:right-8 md:left-[42%] xl:right-12
+                            [mask-image:radial-gradient(ellipse_70%_75%_at_60%_45%,#000_35%,transparent_100%)]"
+                />
 
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => setMounted(true), [])
-
-    if(!mounted) return null
-
-    return ( 
-        <div id="about" className="w-full min-h-screen flex items-center 
-                                justify-center p-10 md:p-5 gap-0 md:gap-15 flex-col 
-                                md:flex-row scroll-mt-24 pt-30 md:pt-5">
-            <div className="flex-1 p-4 ml-0 md:ml-10 flex flex-col items-center">
-                <h1 className="text-2xl text-center md:text-left">Olá! Eu sou Leonardo</h1>
-                <div className="h-[2.6rem] text-2xl text-purple-600 text-center md:text-left">
-                    <Typewriter
-                      words={['< Desenvolvedor Full-Stack />']}
-                      loop={0}
-                      cursor
-                      cursorStyle="|"
-                      typeSpeed={50}
-                      delaySpeed={30}
-                    />
+                <div className="enter grid-page relative gap-y-2 border-b border-border py-5" style={delay(0)}>
+                    <p className="meta col-span-2 text-foreground md:col-span-3">Leonardo Trojan</p>
+                    <p className="meta col-span-2 text-muted-foreground md:col-span-3">Engenheiro full-stack</p>
+                    <p className="meta col-span-2 hidden text-muted-foreground md:col-span-3 md:block">Produto / Arquitetura / Web</p>
+                    <p className="meta col-span-2 hidden text-right text-muted-foreground md:col-span-3 md:block">
+                        Portfólio © {new Date().getFullYear()}
+                    </p>
                 </div>
-                <p className="hidden md:block text-justify pt-10 md:pt-3">Sou desenvolvedor full-stack com foco em construir aplicações modernas, 
-                    bem estruturadas e próximas de cenários reais de produção. Trabalho principalmente com JavaScript e TypeScript, 
-                    atuando tanto no front-end quanto no back-end, sempre buscando clareza de arquitetura, código limpo e boas 
-                    práticas.
-                    Tenho experiência com desenvolvimento front-end utilizando React, Next.js e Tailwind CSS, além de back-end com Node.js
-                     e NestJS, criando APIs organizadas, fluxos completos de aplicação e integrações entre sistemas.
-                    Gosto de entender o “porquê” por trás das decisões técnicas e estou em constante evolução, buscando aprender na prática
-                     e transformar ideias em soluções funcionais. Atualmente, meu foco é crescer profissionalmente como desenvolvedor, 
-                     contribuindo com projetos reais e aprendendo todos os dias.</p>
-                     <p className="block md:hidden text-justify pt-10 md:pt-3">
-                        Sou desenvolvedor full-stack com foco em criar aplicações modernas e bem estruturadas, atuando com JavaScript 
-                        e TypeScript tanto no front-end quanto no back-end. Trabalho com React, Next.js, Tailwind CSS, Node.js e NestJS, 
-                        buscando sempre código limpo, boas práticas e aprendizado constante por meio de projetos reais.
-                     </p>
-                    <a href="/curriculo-leonardoTrojan.pdf" download>
-                      <Button className="flex gap-2 mt-3 bg-purple-600 text-foreground cursor-pointer">
-                        <Download size={18} />
-                        Baixar currículo
-                      </Button>
-                    </a>
-            </div>
-            <div className="flex-1 flex justify-center">
-                <div className="w-70 h-70 m-10">
-                    <Image
-                      src="/leo-picture.jpeg"
-                      alt="Foto-leonardo"
-                      width={500}
-                      height={100}
-                      className="w-full h-full object-cover rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.0025)] shadow-sky-300"
-                    />
+
+                <div className="relative flex flex-1 flex-col justify-center py-12 md:py-16">
+                    <h1
+                     lang="en"
+                     className="display text-[clamp(3rem,13.5vw,5.5rem)] md:text-[clamp(4.5rem,8.6vw,9rem)]"
+                    >
+                        <span className="block"><Words text="Building" delay={150} /></span>
+                        <span className="block md:pl-[calc((100%+1.5rem)/12*2)]"><Words text="digital products" delay={230} /></span>
+                        <span className="block">
+                            <Words text="that feel" delay={390} />{' '}
+                            <span className="mask">
+                                <span style={delay(550)} className="text-muted-foreground">
+                                    alive<span className="text-signal-ink">.</span>
+                                </span>
+                            </span>
+                        </span>
+                    </h1>
+                </div>
+
+                <div className="grid-page relative gap-y-10 border-t border-border pb-8 pt-6 md:pb-10">
+                    <div className="enter col-span-4 md:col-span-6 lg:col-span-5" style={delay(650)}>
+                        <p className="text-balance text-xl font-medium leading-snug tracking-tight sm:text-2xl">
+                            Transformo ideias complexas em software com significado.
+                        </p>
+                        <p className="mt-4 max-w-md text-pretty text-[15px] leading-relaxed text-muted-foreground">
+                            Construo aplicações web e mobile bem estruturadas e orientadas a produto, da interface
+                            à infraestrutura que a mantém de pé.
+                        </p>
+                    </div>
+
+                    <div className="enter col-span-4 md:col-span-3 lg:col-start-8 lg:col-span-2" style={delay(720)}>
+                        <p className="meta text-muted-foreground">Stack principal</p>
+                        <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-sm md:grid-cols-1" aria-label="Principais tecnologias">
+                            {stack.map((tech) => <li key={tech}>{tech}</li>)}
+                        </ul>
+                    </div>
+
+                    <div
+                     className="enter col-span-4 flex flex-col items-start gap-4 md:col-span-3 md:items-end md:justify-end"
+                     style={delay(800)}
+                    >
+                        <Magnetic>
+                            <a href="#work" className={cta({ size: 'lg' })}>
+                                Explorar projetos
+                                <ArrowDown className="group-hover/cta:translate-y-1" />
+                            </a>
+                        </Magnetic>
+                        <div className="flex gap-6">
+                            <a href={resumeUrl} download className={cta({ variant: 'ghost', size: 'sm' })}>
+                                Currículo
+                            </a>
+                            <a href={social.github.url} target="_blank" rel="noopener noreferrer" className={cta({ variant: 'ghost', size: 'sm' })}>
+                                GitHub
+                                <ArrowUpRight className="group-hover/cta:-translate-y-0.5 group-hover/cta:translate-x-0.5" />
+                                <span className="sr-only">(abre em nova aba)</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
      );
 }
- 
+
 export default HeroSection;

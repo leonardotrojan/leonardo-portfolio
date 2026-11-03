@@ -1,31 +1,54 @@
-import { Github, Instagram, Linkedin, Mail } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { ArrowUp } from "lucide-react";
+import { social } from "@/data/social";
+
+const links = [
+    { ...social.github, external: true },
+    { ...social.linkedin, external: true },
+    { ...social.email, external: false },
+]
 
 const Footer = () => {
-    return ( 
-        <div className="w-full h-[10em] bg-card flex justify-center items-center gap-8
-                        bg-gradient-to-br 
-                        from-[rgb(var(--card-gradient-start))] 
-                        to-[rgb(var(--card-gradient-end))] transition-colors
-                        duration-300">
-            <Link href="mailto:leonardo.trojan.dev@gmail.com" target="_blank">
-                <div className="rounded-full p-3 bg-background hover:scale-110 hover:bg-foreground/10 transition cursor-pointer">
-                    <Mail height={40} width={40} />
+    return (
+        <footer className="overflow-hidden border-t border-border">
+            <div className="container-page">
+                <div className="grid-page gap-y-6 py-8">
+                    <p className="meta col-span-4 text-muted-foreground md:col-span-3">
+                        © {new Date().getFullYear()} Leonardo Trojan
+                    </p>
+                    <ul className="col-span-4 flex flex-wrap gap-x-6 gap-y-2 md:col-span-6">
+                        {links.map(({ label, url, external }) => (
+                            <li key={label}>
+                                <a
+                                 href={url}
+                                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                 className="meta text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                                >
+                                    {label}
+                                    {external && <span className="sr-only"> (abre em nova aba)</span>}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    <a
+                     href="#top"
+                     className="meta group col-span-4 inline-flex items-center gap-2 text-muted-foreground transition-colors duration-300
+                                hover:text-foreground md:col-span-3 md:justify-end"
+                    >
+                        Voltar ao topo
+                        <ArrowUp className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true" />
+                    </a>
                 </div>
-            </Link>
-            <Link href="https://www.linkedin.com/in/leonardo-trojan/" target="_blank">
-                <div className="rounded-full p-3 bg-background hover:scale-110 hover:bg-foreground/10 transition cursor-pointer">
-                    <Linkedin height={40} width={40} />
-                </div>
-            </Link>
-            <Link href="https://github.com/leonardotrojan" target="_blank">
-                <div className="rounded-full p-3 bg-background hover:scale-110 hover:bg-foreground/10 transition cursor-pointer">
-                    <Github height={40} width={40} />
-                </div>
-            </Link>
-        </div>
+
+                <p
+                 aria-hidden="true"
+                 className="display select-none whitespace-nowrap pb-[0.04em] text-[16.2vw] leading-[0.78] text-surface
+                            min-[96rem]:text-[15.4rem]"
+                >
+                    Trojan<span className="text-signal-ink">.</span>
+                </p>
+            </div>
+        </footer>
      );
 }
- 
+
 export default Footer;

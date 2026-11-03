@@ -2,24 +2,28 @@
 
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import { useSyncExternalStore } from "react"
+
+const subscribe = () => () => {}
 
 export function ThemeToggle() {
-    
-    const { theme, setTheme } = useTheme()
-    const [mounted, setMounted] = useState(false)
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
+    const { resolvedTheme, setTheme } = useTheme()
+    const mounted = useSyncExternalStore(subscribe, () => true, () => false)
 
-    if(!mounted) return null
+    // Antes de montar o tema é desconhecido no servidor; espera para não divergir na hidratação.
+    const isDark = mounted && resolvedTheme === "dark"
 
     return (
-        <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-         className="border-0"
+        <button
+         type="button"
+         onClick={() => setTheme(isDark ? "light" : "dark")}
+         aria-label={isDark ? "Ativar tema claro" : "Ativar tema escuro"}
+         className="grid size-10 cursor-pointer place-items-center text-muted-foreground transition-colors duration-300 hover:text-foreground"
         >
-            {theme === 'dark' ? <Sun className='cursor-pointer hover:scale-[130%] transition delay-150'/> : <Moon className='cursor-pointer hover:scale-[130%] transition delay-150'/> }
+            {mounted
+                ? (isDark ? <Sun className="size-4" strokeWidth={1.5} /> : <Moon className="size-4" strokeWidth={1.5} />)
+                : <span className="size-4" aria-hidden="true" />}
         </button>
     )
 }
